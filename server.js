@@ -1,12 +1,12 @@
 const fs = require("fs")
 const bodyParser = require("body-parser")
-const jsonServer = require('"json-server')
-const jwt = require("jsoonwebtoken")
+const jsonServer = require("json-server")
+const jwt = require("jsonwebtoken")
 
 const server = jsonServer.create()
 const userdb = JSON.parse(fs.readFileSync("./users.json","utf-8"))
 
-server.use(bodyParser.urlencoded({extended:ture}))
+server.use(bodyParser.urlencoded({extended:true}))
 server.use(bodyParser.json())
 server.use(jsonServer.defaults())
 
